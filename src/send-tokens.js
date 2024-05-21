@@ -1,3 +1,4 @@
+require('dotenv').config()
 const {
     Connection,
     Keypair,
@@ -17,6 +18,7 @@ const bs58 = require('bs58');
 // Replace this with the private key of the sender's address in base58 format
 const senderPrivateKeyBase58 = process.env.PRIVATE_KEY;
 const senderPrivateKey = bs58.decode(senderPrivateKeyBase58);
+
 const solanaServer = process.env.SOLANA_RPC_SERVER
 
 // Replace this with the token account address of the token you want to send
@@ -36,6 +38,14 @@ const recipientAddresses = [
     process.env.WALLET_10,
     process.env.WALLET_11,
     process.env.WALLET_12,
+    process.env.WALLET_13,
+    process.env.WALLET_14,
+    process.env.WALLET_15,
+    process.env.WALLET_16,
+    process.env.WALLET_17,
+    process.env.WALLET_18,
+    process.env.WALLET_19,
+    process.env.WALLET_20,
     // Add more recipient addresses as needed
 ];
 
