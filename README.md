@@ -30,6 +30,7 @@ npm run lp
 
 
 Explanation
+
 Approve Token Transfer:
 
 The createApproveInstruction function approves the specified amount of tokens for transfer to the liquidity pool program.
@@ -48,3 +49,10 @@ The script creates a transaction that combines these instructions and sends it t
 Verify LP Token Balance:
 
 After the transaction is confirmed, the script fetches and logs the user's LP token balance to verify the receipt of LP tokens.
+
+Write LP Token Balance to File:
+
+After fetching the LP token balance, the script writes the balance to a file named lp_token_balance.txt using writeFileSync.
+Log File Write Success:
+
+A console log statement is added to confirm that the LP token balance has been written to the file successfully.

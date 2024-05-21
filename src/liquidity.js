@@ -1,5 +1,4 @@
 require('dotenv').config();
-require('dotenv').config()
 const {
   Connection,
   Keypair,
@@ -15,7 +14,7 @@ const {
   createTransferInstruction,
   TOKEN_PROGRAM_ID,
 } = require('@solana/spl-token');
-
+const { writeFileSync } = require('fs');
 const bs58 = require('bs58');
 
 const contractAddress = process.env.TOKEN_ADDRESS;
@@ -102,6 +101,10 @@ async function addLiquidity() {
 
     const lpTokenBalance = lpTokenAccount.value[0].account.data.parsed.info.tokenAmount.uiAmount;
     console.log('LP Tokens received:', lpTokenBalance);
+
+    // Write the LP token balance to a file
+    writeFileSync('lp_token_balance.txt', `LP Tokens received: ${lpTokenBalance}\n`);
+    console.log('LP token balance written to lp_token_balance.txt');
   } catch (error) {
     console.error('Error adding liquidity:', error);
   }
